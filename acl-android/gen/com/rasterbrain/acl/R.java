@@ -29,15 +29,16 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080006;
-        public static final int RegisterAddress=0x7f080009;
-        public static final int RegisterButton=0x7f08000f;
-        public static final int RegisterConfirm=0x7f08000d;
-        public static final int RegisterName=0x7f08000b;
-        public static final int RegisterPassword=0x7f08000c;
-        public static final int RegisterPhone=0x7f08000a;
-        public static final int RegisterUsername=0x7f08000e;
+        public static final int RegisterAddress=0x7f08000f;
+        public static final int RegisterButton=0x7f080010;
+        public static final int RegisterConfirm=0x7f08000c;
+        public static final int RegisterEmail=0x7f08000a;
+        public static final int RegisterName=0x7f08000d;
+        public static final int RegisterPassword=0x7f08000b;
+        public static final int RegisterPhone=0x7f08000e;
+        public static final int RegisterUsername=0x7f080009;
         public static final int RelativeLayout1=0x7f080008;
-        public static final int action_settings=0x7f080010;
+        public static final int action_settings=0x7f080011;
         public static final int imageView1=0x7f080004;
         public static final int loginButton=0x7f080003;
         public static final int loginPassword=0x7f080001;

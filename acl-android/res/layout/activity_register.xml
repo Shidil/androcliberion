@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_grey"
     tools:context=".RegisterActivity" >
 
     <ScrollView
@@ -30,39 +31,25 @@
                     android:orientation="vertical" >
 
                     <EditText
-                        android:id="@+id/RegisterAddress"
+                        android:id="@+id/RegisterUsername"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
+                        
                         android:ems="10"
-                        android:hint="Address"
-                        android:inputType="textPostalAddress"
-                        android:paddingLeft="20dp" >
-
-                        <requestFocus />
-                    </EditText>
-
-                    <EditText
-                        android:id="@+id/RegisterPhone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
-                        android:ems="10"
-                        android:hint="Phone Number"
-                        android:inputType="phone"
+                        android:hint="User Name"
+                        android:inputType="text|textNoSuggestions"
                         android:paddingLeft="20dp" />
 
                     <EditText
-                        android:id="@+id/RegisterName"
+                        android:id="@+id/RegisterEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
+                        
                         android:ems="10"
-                        android:hint="Name"
-                        android:inputType="textPersonName"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
                         android:paddingLeft="20dp" />
 
                     <EditText
@@ -70,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
+                        
                         android:ems="10"
                         android:hint="Password"
                         android:inputType="textPassword"
@@ -81,22 +68,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
+                        
                         android:ems="10"
                         android:hint="Confirm"
                         android:inputType="textPassword"
                         android:paddingLeft="20dp" />
 
                     <EditText
-                        android:id="@+id/RegisterUsername"
+                        android:id="@+id/RegisterName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_bg"
+                        
                         android:ems="10"
-                        android:hint="User Name"
-                        android:inputType="textEmailAddress"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
                         android:paddingLeft="20dp" />
+
+                    <EditText
+                        android:id="@+id/RegisterPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        
+                        android:ems="10"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:paddingLeft="20dp" />
+
+                    <EditText
+                        android:id="@+id/RegisterAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        
+                        android:ems="10"
+                        android:hint="Address"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="20dp" >
+
+                        <requestFocus />
+                    </EditText>
+
+                
 
                     <Button
                         android:id="@+id/RegisterButton"
@@ -104,10 +118,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="40dp"
+                        android:background="@drawable/button_bg"
                         android:text="Register" />
-
                 </LinearLayout>
-
             </FrameLayout>
         </RelativeLayout>
     </ScrollView>
