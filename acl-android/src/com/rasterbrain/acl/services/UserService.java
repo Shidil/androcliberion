@@ -11,13 +11,27 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import com.rasterbrain.acl.Constants;
 
+
 public class UserService {
 	String SOAP_ACTION = "";
-
+	
+	public String register(String username,String password,String email,String name,String phonenumber,String address){
+		SOAP_ACTION = Constants.NAME_SPACE + "register";
+		SoapObject object = new SoapObject(Constants.NAME_SPACE, "register");
+		object.addProperty("username", username);
+		object.addProperty("password", password);
+		object.addProperty("email",email);
+		object.addProperty("name",name);
+		object.addProperty("phonenumber",phonenumber);
+		object.addProperty("address",address);
+		//object.addProperty("email",email);
+		String rsp = upload(object);
+		return rsp;
+	}
 	public String checkLogin(String username, String password) {
 		// TODO Auto-generated method stub
 		SOAP_ACTION = Constants.NAME_SPACE + "login";
-		SoapObject object = new SoapObject(Constants.NAME_SPACE, "loginCheck");
+		SoapObject object = new SoapObject(Constants.NAME_SPACE, "login");
 		object.addProperty("username", username);
 		object.addProperty("password", password);
 		String rsp = upload(object);
@@ -37,11 +51,11 @@ public class UserService {
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			return "error";
 		} catch (XmlPullParserException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			return "error";
 		}
 	}

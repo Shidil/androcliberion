@@ -1,10 +1,6 @@
 package com.rasterbrain.acl.activities;
 
 import com.rasterbrain.acl.R;
-import com.rasterbrain.acl.R.id;
-import com.rasterbrain.acl.R.layout;
-import com.rasterbrain.acl.R.menu;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

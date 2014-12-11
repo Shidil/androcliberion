@@ -1,23 +1,21 @@
 package com.rasterbrain.acl.activities;
 
 import com.rasterbrain.acl.R;
-import com.rasterbrain.acl.R.layout;
-import com.rasterbrain.acl.R.menu;
 import com.rasterbrain.acl.services.UserService;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
-
+	ProgressDialog diag;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,9 +28,7 @@ public class LoginActivity extends Activity {
 				EditText passwordBox = (EditText) findViewById(R.id.loginPassword);
 				String username = usernameBox.getText().toString();
 				String password = passwordBox.getText().toString();
-				ProgressDialog diag = new ProgressDialog(LoginActivity.this);
-				diag.setTitle("Loading..");
-				diag.setCanceledOnTouchOutside(false);
+				
 				
 				if(username.equals("")){
 					usernameBox.setError("Please enter username");
@@ -41,7 +37,7 @@ public class LoginActivity extends Activity {
 					passwordBox.setError("Please enter password");
 				}
 				if(!username.equals("")&&!password.equals("")){
-					diag.show();
+					
 					new LoginTask().execute(username,password);
 				}
 				
@@ -50,7 +46,7 @@ public class LoginActivity extends Activity {
 	}
 	class LoginTask extends AsyncTask<String, Integer, String>{
 
-		
+		ProgressDialog diag;
 		@Override
 		protected String doInBackground(String... params) {
 			UserService ser = new UserService();
@@ -58,14 +54,33 @@ public class LoginActivity extends Activity {
 			
 		}
 		@Override
+		protected void onPreExecute() {
+			diag = new ProgressDialog(LoginActivity.this);
+			diag.setMessage("Loading...!");
+			diag.setCanceledOnTouchOutside(false);
+			// dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			// dialog.setMax(100);
+			diag.show();
+
+		}
+
+		// @Override
+		// protected void onProgressUpdate(Integer... values) {
+		// // TODO Auto-generated method stub
+		// dialog.setProgress(values[0]);
+		// }
+		@Override
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
+			diag.dismiss();
 			super.onPostExecute(result);
 			if(result.equals("error"))
 				Toast.makeText(getBaseContext(), "Network error", Toast.LENGTH_LONG).show();
 			else if(result.equals("true")){
 				Toast.makeText(getBaseContext(), "Logged in successfully", Toast.LENGTH_SHORT).show();
-				// forward to mainPage
+				// forward tRegisterTasko mainPage
+				Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+				startActivity(i);
 			}
 			else{
 				Toast.makeText(getBaseContext(), "Invalid username or password", Toast.LENGTH_LONG).show();
