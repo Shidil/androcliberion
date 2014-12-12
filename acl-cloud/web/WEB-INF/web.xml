@@ -32,7 +32,7 @@
         <servlet-class>com.rasterbrain.acl.servlets.AddBookServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoginService</servlet-name>
+        <servlet-name>UserService</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -65,8 +65,8 @@
         <url-pattern>/AddBookServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoginService</servlet-name>
-        <url-pattern>/LoginService</url-pattern>
+        <servlet-name>UserService</servlet-name>
+        <url-pattern>/UserService</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

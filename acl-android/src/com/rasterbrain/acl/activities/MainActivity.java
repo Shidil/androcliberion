@@ -1,5 +1,6 @@
-package com.rasterbrain.acl;
+package com.rasterbrain.acl.activities;
 
+import com.rasterbrain.acl.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
