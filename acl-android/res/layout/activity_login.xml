@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/signinButton"
         android:layout_marginTop="162dp"
-        android:background="@drawable/login_editbox_light"
+        android:background="@drawable/login_box"
         android:drawableLeft="@drawable/email_icon"
         android:ems="10"
         android:hint="    Username"
@@ -57,7 +57,7 @@
         android:layout_alignRight="@+id/loginUsername"
         android:layout_below="@+id/loginUsername"
         android:layout_marginTop="-7dp"
-        android:background="@drawable/login_editbox_light_r"
+        android:background="@drawable/login_box_r"
         android:drawableLeft="@drawable/lock_icon"
         android:ems="10"
         android:hint="  Password"
@@ -71,7 +71,6 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:text="This will be an amazing experience"
-        android:layout_marginTop="-10dp"
         android:textSize="15dp" />
 
 </RelativeLayout>

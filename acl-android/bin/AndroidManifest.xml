@@ -36,6 +36,10 @@
             android:name="com.rasterbrain.acl.activities.HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
+        <activity
+            android:name="com.rasterbrain.acl.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
     </application>
 
 </manifest>

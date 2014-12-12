@@ -1,5 +1,6 @@
 package com.rasterbrain.acl.activities;
 
+import com.rasterbrain.acl.HomeActivity;
 import com.rasterbrain.acl.R;
 import com.rasterbrain.acl.services.UserService;
 
